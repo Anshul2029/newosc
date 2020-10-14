@@ -1,0 +1,95 @@
+<%- include('header'); %>
+
+<section class="ftco-section">
+	<div class="container">
+		<div class="row justify-content-center mb-5 pb-3">
+			<div class="col-md-6 col-sm-12 ftco-animate">
+				<span class="subheading">Delicious</span>
+				<h1 class="mb-4"><%= item.name %></h1>
+				<p class="mb-4 mb-md-5"><%= item.description %></p>
+				<!-- <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#"
+						class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p> -->
+			</div>
+			<div class="col-md-6 ftco-animate">
+				<img src="<%= item.image %>" class="img-fluid" alt="<%= item.name %>">
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="ftco-section ftco-services">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row justify-content-center mb-5 pb-3">
+			<div class="col-md-7 heading-section ftco-animate text-center">
+				<h2 class="mb-4">Our Services</h2>
+				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
+					live the blind texts.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 ftco-animate">
+				<div class="media d-block text-center block-6 services">
+					<div class="icon d-flex justify-content-center align-items-center mb-5">
+						<span class="flaticon-diet"></span>
+					</div>
+					<div class="media-body">
+						<h3 class="heading">Healthy Foods</h3>
+						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost
+							unorthographic.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 ftco-animate">
+				<div class="media d-block text-center block-6 services">
+					<div class="icon d-flex justify-content-center align-items-center mb-5">
+						<span class="flaticon-bicycle"></span>
+					</div>
+					<div class="media-body">
+						<h3 class="heading">Fastest Delivery</h3>
+						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost
+							unorthographic.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 ftco-animate">
+				<div class="media d-block text-center block-6 services">
+					<div class="icon d-flex justify-content-center align-items-center mb-5"><span
+							class="flaticon-pizza-1"></span></div>
+					<div class="media-body">
+						<h3 class="heading">Original Recipes</h3>
+						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost
+							unorthographic.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<%- include('footer'); %>
+
+
+
+<!-- 
+
+
+app.get('/', function (req, res) {
+    res.render('items', item = {
+        name: 'pizza',
+        description: 'A small river named Duden flows by their place and supplies it with the necessary regelialia',
+        price: '20',
+        image: "images/bg_1.png"
+    });
+});
+
+app.get('/home', function (req, res) {
+    res.render('home', person = {
+        username: 'surendra',
+        password : 'surendra',
+        mobile: '9920288211',
+    });
+});
+
+ -->
