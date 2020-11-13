@@ -36,7 +36,14 @@
 	          <li class="nav-item"><a href="/home/services" class="nav-link">Services</a></li>
 	          <li class="nav-item"><a href="/home/blog" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="/home/about" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="/home/contact" class="nav-link">Contact</a></li>
+			  <li class="nav-item"><a href="/home/contact" class="nav-link">Contact</a></li>
+			  <li class="nav-item"><a class="nav-link"></a></li>
+			  <li class="nav-item"><a class="nav-link"></a></li>
+			  <li class="nav-item"><a class="nav-link"></a></li>
+			  <li class="nav-item"><a class="nav-link"></a></li>
+			  <li class="nav-item"><a class="nav-link"></a></li>
+   			  <li class="nav-item"><a class="nav-link" style="color: rgb(32, 250, 3); font-size: 17px;"><%= person.name %></a></li>
+			  <li class="nav-item"><a href="/logout" class="nav-link" style="color: red; font-size: 17px;">Logout</a></li>
 	        </ul>
 	      </div>
 		  </div>
@@ -176,8 +183,8 @@
     					<div class="text p-4">
     						<h3>Greek Pizza</h3>
     						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-    						<p class="price"><span>$2.90</span> <a href="/items/pizza-2" class="ml-2 btn btn-white btn-outline-white">Details</a></p>
-    					</div>
+							<p class="price"><span>$2.90</span> <a href="/items/pizza-2" class="ml-2 btn btn-white btn-outline-white">Details</a></p>    					
+						</div>
     				</div>
     			</div>
     			<div class="col-lg-4 d-flex ftco-animate">
@@ -277,185 +284,99 @@
       </div>
     </section>
 
-    <section class="ftco-menu">
-    	<div class="container-fluid">
-    		<div class="row d-md-flex">
-	    		</div>
-	    		<div class="col-lg-8 ftco-animate p-md-5">
-		    		<div class="row">
-		          <div class="col-md-12 nav-link-wrap mb-5">
-		            <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-		              <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Pizza</a>
-
-		              <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Drinks</a>
-
-		              <a class="nav-link" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Burgers</a>
-
-		              <a class="nav-link" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">Pasta</a>
-		            </div>
-		          </div>
-		          <div class="col-md-12 d-flex align-items-center">
-		            
-		            <div class="tab-content ftco-animate" id="v-pills-tabContent">
-
-		              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
-		              	<div class="row">
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pizza-1.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pizza-2.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pizza-3.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              	</div>
-		              </div>
-
-		              <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
-		                <div class="row">
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-1.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Lemonade Juice</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-2.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Pineapple Juice</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-3.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Soda Drinks</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              	</div>
-		              </div>
-
-		              <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
-		                <div class="row">
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/burger-1.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/burger-2.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/burger-3.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              	</div>
-		              </div>
-
-		              <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-4-tab">
-		                <div class="row">
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pasta-1.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pasta-2.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pasta-3.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              	</div>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    </div>
-    	</div>
-    </section>
+	<section class="ftco-menu">
+		<div class="container-fluid">
+			<div class="row d-md-flex">
+				<div class="col-lg-4 ftco-animate img f-menu-img mb-5 mb-md-0"
+					style="background-image: url(images/about.jpg);">
+				</div>
+				<div class="col-lg-8 ftco-animate p-md-5">
+					<div class="row">
+						<div class="col-md-12 nav-link-wrap mb-5">
+							<div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist"
+								aria-orientation="vertical">
+								<a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1"
+									role="tab" aria-controls="v-pills-1" aria-selected="true">Pizza</a>
+	
+								<a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab"
+									aria-controls="v-pills-2" aria-selected="false">Drinks</a>
+	
+								<a class="nav-link" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab"
+									aria-controls="v-pills-3" aria-selected="false">Burgers</a>
+	
+								<a class="nav-link" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab"
+									aria-controls="v-pills-4" aria-selected="false">Pasta</a>
+							</div>
+						</div>
+						<%  function display(name, url, description, price){   %>
+						<div class="col-md-4 text-center">
+							<div class="menu-wrap">
+								<a href="#" class="menu-img img mb-4" style="background-image: url(<%=url%>);"></a>
+								<div class="text">
+									<h3><a href="#"><%=name%></a></h3>
+									<p><%=description%></p>
+									<p class="price"><span><%=price%></span></p>
+									<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<% }  %>
+						<div class="col-md-12 d-flex align-items-center">
+							<div class="tab-content ftco-animate" id="v-pills-tabContent">
+								<div class="tab-pane fade show active" id="v-pills-1" role="tabpanel"
+									aria-labelledby="v-pills-1-tab">
+									<div class="row">
+										<%display('Italian Pizza', 'images/pizza-1.jpg', 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.',
+										'$2.90')%>
+										<%display('American Pizza', 'images/pizza-2.jpg', 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.',
+										'$2.90')%>
+										<%display('Mexican Pizza', 'images/pizza-3.jpg', 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.',
+										'$2.90')%>
+									</div>
+								</div>
+	
+								<div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
+									<div class="row">
+										<%display('Lemonade Juice', 'images/drink-1.jpg', 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.',
+										'$2.90')%>
+										<%display('Pineapple Juice', 'images/drink-2.jpg', 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.',
+										'$2.90')%>
+										<%display('Soda Juice', 'images/drink-3.jpg', 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.',
+										'$2.90')%>
+									</div>
+								</div>
+	
+								<div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
+									<div class="row">
+										
+										<%display('Milano Pizza', 'images/burger-1.jpg', 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.',
+										 '$2.90')%>
+										<%display('Milano Pizza', 'images/burger-2.jpg', 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.',
+										 '$2.90')%>
+										<%display('Milano Pizza', 'images/burger-3.jpg', 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.',
+										 '$2.90')%>
+									</div>
+								</div>
+	
+								<div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-4-tab">
+									<div class="row">
+										<%display('Milano Pasta', 'images/pasta-1.jpg', 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.',
+										 '$2.90')%>
+										<%display('Italian Pasta', 'images/pasta-2.jpg', 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.',
+										 '$2.90')%>
+										<%display('American Pasta', 'images/pasta-3.jpg', 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.',
+										 '$2.90')%>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
     <section class="ftco-section">
       <div class="container">

@@ -2,13 +2,10 @@ var express = require('express')
 var mongoose = require('mongoose')
 var body = require('body-parser')
 var app = express()
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-var session = require("node-sessionstorage")
+var session = require('express-session')
+var sessionstorage = require("node-sessionstorage")
 
-app.use(passport.initialize());
-app.use(passport.session());
-initializePassport(passport);
+app.use(session({ secret: "something written here", resave: false, saveUninitialized: true }))
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -50,8 +47,8 @@ var itemschema = new mongoose.Schema({
 var itemmodel = mongoose.model("itemmodel", itemschema);
 var usermodel = mongoose.model("usermodel", UserSchema);
 
-var orderlist=['mango'];
-var frequency=[2];
+var pizzalist=[];
+var numberlist =[];
 
 app.get("/login", function (req, res) {
     res.render("login")
@@ -61,9 +58,21 @@ app.get("/register", function (req, res) {
     res.render("register")
 })
 
+app.get('/home', function(req,res){
+    if(req.session.user){
+        var person = sessionstorage.getItem('user');
+        console.log(person.name);
+        res.render("home", { person: person });
+    }
+    else{
+        res.redirect("/login");
+    }
+    
+})
+
 app.get('/home/:page', (req, res) => {
     const pageName = req.params.page;
-    var person = session.getItem('user');
+    var person = sessionstorage.getItem('user');
     res.render(pageName, {
         person : person
     });
@@ -72,41 +81,53 @@ app.get('/home/:page', (req, res) => {
 app.get('/items/:itemname', (req,res)=>{
     var c= req.params.itemname;
     itemmodel.findOne({title: c}, function(err, item){
-        res.render('items', {item:item});
+        res.render("items",{item: item});
     })
 });
 
 app.get('/logout', function (req, res) {
-    req.logout();
+    req.session.destroy();
+    pizzalist=[];
+    numberlist= [];
     res.redirect('/login');
 });
 
-// app.get('/orders', function(req,res){
-//     res.render('orders', { orderlist: orderlist, frequency: frequency })
-// })
+app.get('/orders', function(req,res){
+    res.render('orders', { pizzalist:pizzalist , numberlist:numberlist })
+})
 
-app.post('/login',
-    passport.authenticate('local', {
-        failureRedirect: '/login',
-        failureFlash: true
-    }),
-    function(req, res) {
-        session.setItem('user', req.user);
-        res.render('home', {person : req.user});
+app.post('/orders/:title', function(req,res){
+    itemmodel.findOne({ title: req.params.title}, function(err, pizza){
+        if(err){
+            res.redirect('/orders');
+        }
+        else{
+            pizzalist.push(pizza);
+            numberlist.push(1);
+            res.redirect('/orders');
+        }
+    })
+})
+
+app.post('/login', function(req, res) {
+    usermodel.findOne({username: req.body.username}, function(err,user){
+        if (err) {
+            console.log(err)
+            res.render("login");
+        }
+        else if (user.password == req.body.pass) {
+            req.session.user = user;
+            sessionstorage.setItem('user', user);  
+            req.session.pizzalist = pizzalist;
+            req.session.numberlist = numberlist;
+            res.redirect("/home");
+        }
+        else {
+            res.redirect("/login");
+        }
+        })
     }
 );
-
-app.post("/items/:itemname", function(req,res){
-    var itname = req.params.itemname;
-    var num= req.body.num;
-    itemmodel.findOne({ name: itname }, function (err, item) {
-        orderlist.push(item.name);
-        frequency.push(num);
-        res.render('orders', { orderlist: orderlist, frequency: frequency });
-    });
-    console.log(orderlist);
-    
-})
 
 app.post("/register", function (req, res) {
     var name = req.body.name;
@@ -131,36 +152,6 @@ app.post("/register", function (req, res) {
     })
 });
 
-function initializePassport(passport) {
-    passport.use(new LocalStrategy(
-        {
-            usernameField: 'username',
-            passwordField: 'pass'
-        },
-        function (username, password, done) {
-            usermodel.findOne({ username: username }, function (err, user) {
-                if (err) { return done(err); }
-                if (!user) {
-                    return done(null, false, { message: 'Incorrect username.' });
-                }
-                if (password !== user.password) {
-                    return done(null, false, { message: 'Incorrect password.' });
-                }
-                return done(null, user);
-            });
-        }
-    ));
-    passport.serializeUser(function (user, done) {
-        done(null, user.id);
-    });
-
-    passport.deserializeUser(function (id, done) {
-        User.findById(id, function (err, user) {
-            done(err, user);
-        });
-    });
-}
-
 app.listen(3040, "localhost", function () {
-    console.log("Connected to server")
+    console.log("Connected to server 3040")
 })
